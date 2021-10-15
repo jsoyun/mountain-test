@@ -1,0 +1,122 @@
+User {
+    dataValues: {
+      id: 1,
+      email: 'asdf@naver.com',
+      nick: '화녕인사',
+      password: '$2b$12$HQX7Up.luDWtCTSHNbjRPuZ5fNQ/YnfVCoP.MzZKuxfS96OxhqunK',
+      img: '',
+      provider: 'local',
+      snsId: null,
+      createdAt: 2021-10-12T06:38:52.000Z,
+      updatedAt: 2021-10-12T06:52:30.000Z,
+      deletedAt: null,
+      Followers: [ [User] ],
+      Followings: [],
+      recommenders: [],
+      Likers: [ [Club] ]
+    },
+    _previousDataValues: {
+      id: 1,
+      email: 'asdf@naver.com',
+      nick: '화녕인사',
+      password: '$2b$12$HQX7Up.luDWtCTSHNbjRPuZ5fNQ/YnfVCoP.MzZKuxfS96OxhqunK',
+      img: '',
+      provider: 'local',
+      snsId: null,
+      createdAt: 2021-10-12T06:38:52.000Z,
+      updatedAt: 2021-10-12T06:52:30.000Z,
+      deletedAt: null,
+      Followers: [ [User] ],
+      Followings: [],
+      recommenders: [],
+      Likers: [ [Club] ]
+    },
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: false,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: [ [Object], [Object], [Object], [Object] ],
+      includeNames: [ 'Followers', 'Followings', 'recommenders', 'Likers' ],
+      includeMap: {
+        Followers: [Object],
+        Followings: [Object],
+        recommenders: [Object],
+        Likers: [Object]
+      },
+      includeValidated: true,
+      attributes: [
+        'id',        'email',
+        'nick',      'password',
+        'img',       'provider',
+        'snsId',     'createdAt',
+        'updatedAt', 'deletedAt'
+      ],
+      raw: true
+    },
+    isNewRecord: false,
+    Followers: [
+      User {
+        dataValues: [Object],
+        _previousDataValues: [Object],
+        _changed: Set(0) {},
+        _options: [Object],
+        isNewRecord: false,
+        Follow: [Follow]
+      }
+    ],
+    Followings: [],
+    recommenders: [],
+    Likers: [
+      Club {
+        dataValues: [Object],
+        _previousDataValues: [Object],
+        _changed: Set(0) {},
+        _options: [Object],
+        isNewRecord: false,
+        Likes: [Likes]
+      }
+    ]
+  }
+  Executing (default): SELECT `id`, `email`, `nick`, `password`, `img`, `provider`, `snsId`, `createdAt`, `updatedAt`, `deletedAt` FROM `users` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`id` = '1');
+  User {
+    dataValues: {
+      id: 1,
+      email: 'asdf@naver.com',
+      nick: '화녕인사',
+      password: '$2b$12$HQX7Up.luDWtCTSHNbjRPuZ5fNQ/YnfVCoP.MzZKuxfS96OxhqunK',
+      img: '',
+      provider: 'local',
+      snsId: null,
+      createdAt: 2021-10-12T06:38:52.000Z,
+      updatedAt: 2021-10-12T06:52:30.000Z,
+      deletedAt: null
+    },
+    _previousDataValues: {
+      id: 1,
+      email: 'asdf@naver.com',
+      nick: '화녕인사',
+      password: '$2b$12$HQX7Up.luDWtCTSHNbjRPuZ5fNQ/YnfVCoP.MzZKuxfS96OxhqunK',
+      img: '',
+      provider: 'local',
+      snsId: null,
+      createdAt: 2021-10-12T06:38:52.000Z,
+      updatedAt: 2021-10-12T06:52:30.000Z,
+      deletedAt: null
+    },
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: false,
+      _schema: null,
+      _schemaDelimiter: '',
+      raw: true,
+      attributes: [
+        'id',        'email',
+        'nick',      'password',
+        'img',       'provider',
+        'snsId',     'createdAt',
+        'updatedAt', 'deletedAt'
+      ]
+    },
+    isNewRecord: false
+  }

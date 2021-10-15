@@ -1,0 +1,376 @@
+/* @import url("https://fonts.googleapis.com/icon?family=Material+Icons"); */
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+:root {
+  --title-font-size: 3em;
+  /* --btn-main-font: Cafe24SsurroundAir;
+  --btn-font-family: Cafe24SsurroundAir; */
+  --btn-main-font: Noto Sans KR;
+  --btn-font-family: Noto Sans KR;
+  --search-bg-color: white;
+  --btn-radius: 10px;
+  --btn-height: 1vw;
+  --btn-bg-height: 2.5vw;
+  --search-width: 15vw;
+  --search-btn-width: 2vw;
+  --search-bg-width: 10vw;
+  /* 게시물 */
+  --pg-border-color: #bababa;
+  /* --pg-width-sz: 10vw;
+  --pg-hight-sz: 10vw; */
+  --pg-margin-sz: 3vw;
+  --pg-padding-sz: 4em;
+}
+
+h3 {
+  font-size: 1.2vw;
+  margin-top: 3vw;
+}
+h4 {
+  font-size: 1vw;
+  margin: 1.313em 0;
+}
+h5 {
+  font-size: 0.8em;
+  margin: 1.313em 0;
+}
+h6 {
+  font-size: 1em;
+  margin: 0.75em 0;
+}
+p {
+  font-size: 0.7em;
+}
+
+/* 상단 */
+.feed-header {
+  text-align: center;
+}
+
+.feed-title {
+  font-size: var(--title-font-size);
+  font-weight: bolder;
+  color: var(--btn-main-font), sans-serif;
+}
+#feed-btn {
+  display: inline-flexbox;
+  font-size: 1vw;
+  align-items: center;
+  border: none;
+  background-color: #fff;
+  margin-left: 17vw;
+  margin-bottom: 7vh;
+  text-decoration: underline;
+  text-shadow: 1px 1px 1px rgb(96, 114, 105);
+  /* font-family: Cafe24SsurroundAir, sans-serif; */
+}
+
+/* 태그 검색 */
+.tag-search {
+  border: transparent;
+  width: 10vw;
+  height: var(--btn-height);
+  border-radius: var(--btn-radius);
+  font-size: 1vw;
+  font-family: var(--btn-font-family), sans-serif;
+  padding-left: 1em;
+  -webkit-box-shadow: 0 0 0px 1000px var(--search-bg-color) inset !important;
+  -webkit-text-fill-color: var(--btn-bg-color) !important;
+}
+
+input:focus {
+  outline: none;
+}
+
+.tag-search-btn .fa-search {
+  width: var(--search-btn-width);
+  height: var(--btn-height);
+  font-size: 0.9vw;
+}
+
+.tag-search-btn {
+  position: relative;
+  font-size: 2vw;
+  background-color: var(--search-bg-color);
+  right: 1vw;
+}
+
+.tag-search-btn:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 100%;
+}
+
+.tag-container {
+  width: 40vw;
+  height: 5.125vw;
+  margin-left: 7.52vw;
+  display: center;
+  border: 2px solid #ccc;
+  padding: 4px;
+  border-radius: 5px;
+  display: flex;
+}
+
+.tag-container .tag {
+  padding: 5px;
+  border: 1px solid rgb(184, 202, 184);
+  margin: 1px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 3px;
+  background: #cfe4cf;
+  color: rgb(96, 114, 105);
+  cursor: default;
+}
+.tag span {
+  font-size: 10px;
+  margin-left: 5px;
+}
+.tag-container input {
+  width: 24.715vw;
+  height: 3.12vw;
+  margin-left: 4.125vw;
+  margin-right: 4.125vw;
+  flex: 1;
+  font-size: 12px;
+  padding: 1px;
+  outline: none;
+  border: 0;
+}
+
+.containerinput:focus {
+  outline: none;
+}
+
+.tag-search-btn .fa-search {
+  width: 2vw;
+  height: 2vw;
+}
+
+.tag-search-btn:hover {
+  cursor: pointer;
+}
+
+.tag-container button {
+  position: relative;
+  background-color: var(--search-bg-color);
+}
+
+/* 본문 */
+/* 사진 게시물 */
+.twit-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.twit {
+  width: 17vw;
+  height: 17vw;
+  margin-top: 5vw;
+  flex-flow: column wrap;
+}
+.twit-author {
+  font-size: 1.5vw;
+  color: #09492b;
+  float: left;
+  position: relative;
+}
+
+.con {
+  position: relative;
+  /* display: flex; */
+  flex-grow: 0;
+  flex-wrap: wrap;
+  width: 17vw;
+  height: 17vw;
+}
+
+.twit .twit-img img {
+  /* position: absolute; */
+  position: relative;
+  width: 17vw;
+  height: 15vw;
+  margin-top: 2vw;
+}
+
+/* .twit-img img {
+  position: relative;
+} */
+
+.twit-follow {
+  position: absolute;
+  /* width: 8vw;
+  height: 3vw; */
+  margin-left: 0.3vw;
+  color: white;
+  background-color: #55b1a3;
+  border: 0;
+  border-radius: 5px;
+  padding-top: -1vw;
+
+  /* background: url("../../images/팔로우이모지.JPG"); */
+}
+
+.con .twit-follow:hover {
+  border-color: #55b1a3;
+  color: white;
+  background-color: #1c3632;
+}
+
+.con .twit-unfollow {
+  margin-left: 0.3vw;
+  color: #55b1a3;
+  border: 0;
+  border-radius: 5px;
+}
+.con .twit-unfollow:hover {
+  border-color: #55b1a3;
+  color: white;
+  background-color: #1c3632;
+}
+
+.picture-search {
+  border: none;
+  padding: 1em 15%;
+}
+
+/* 위 수정 전 css 아래 수정중 css */
+.feed-container {
+  padding: 4.125vw 20vw 200px 20vw;
+}
+
+.search_field {
+  text-align: center;
+}
+
+/* 인증하기 버튼 효과*/
+
+#feed-btn a {
+  position: relative;
+  display: inline-block;
+  /* width: 14.512em; */
+  /* padding: 1em 1em; */
+  color: #09492b;
+  text-transform: uppercase;
+  text-decoration: underline;
+  letter-spacing: 4px;
+  text-decoration: none;
+  font-size: 1.8em;
+  overflow: hidden;
+  transition: 0.2s;
+  border: none;
+  border-radius: 0%;
+  margin-top: 5vh;
+}
+
+#feed-btn a:hover {
+  color: #09492b;
+  background: #a8dfd6;
+  box-shadow: 0 0 10px #a8dfd6, 0 0 40px #a8dfd6, 0 0 80px #a8dfd6;
+  transition-delay: 1s;
+}
+
+#feed-btn a span {
+  position: absolute;
+  display: block;
+}
+
+#feed-btn a span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #a8dfd6);
+}
+
+#feed-btn a:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+#feed-btn a span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #a8dfd6);
+}
+
+#feed-btn a:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+#feed-btn a span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #a8dfd6);
+}
+
+#feed-btn a:hover span:nth-child(2) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+#feed-btn a span:nth-child(4) {
+  bottom: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #a8dfd6);
+}
+
+#feed-btn a:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+.feed-body p {
+  margin-bottom: 2vw;
+}
+
+/* @media screen and (max-width: 662px) {
+  .twit-container .twit-img img {
+    position: absolute;
+    left: 5vw;
+    bottom: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 10vw;
+  }
+}
+*/
+@media screen and (max-width: 710px) {
+  .tag-search-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 612px) {
+  .con .twit-follow {
+    /* display: none; */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tag-container {
+    display: none;
+  }
+  .tag-container input {
+    display: none;
+  }
+}
+/* 
+@media screen and (max-width: 699px) {
+  .con .twit-follow {
+    display: none;
+  }
+} */

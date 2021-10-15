@@ -1,0 +1,28 @@
+{% extends "layout.html" %} {% block css %}
+<link rel="stylesheet" href="mountainInfo\stylesheets\infomountain.css" />
+{% endblock %} {% block content %}
+<style>
+
+</style>
+<section id="mountain-section">
+  <h1>100대명산 정보</h1>
+
+  <div id="kor-img-container">
+    <button class="kor-location" id="se" type="button">서울/경기</button>
+    <button class="kor-location" id="kw" type="button">강원도</button>
+    <button class="kor-location" id="cb" type="button">충청북도</button>
+    <button class="kor-location" id="cn" type="button">충청남도</button>
+    <button class="kor-location" id="kb" type="button">경상북도</button>
+    <button class="kor-location" id="kn" type="button">경상남도</button>
+    <button class="kor-location" id="jb" type="button">전라북도</button>
+    <button class="kor-location" id="jn" type="button">전라남도</button>
+    <button class="kor-location" id="je" type="button">제주도</button>
+  </div>
+
+  <div id="mountain-list"></div>
+</section>
+{%include "footer.html"%}
+{% endblock %}
+{% block script %}
+<script src="/mountainInfo/javascripts/APIdata.js"></script>
+{% endblock %}

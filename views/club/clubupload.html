@@ -1,0 +1,79 @@
+{% extends "layout.html" %} {% block css %}
+<link rel="stylesheet" href="/club/stylesheets/clubupload.css" />
+<style></style>
+{% endblock %} {% block content %}
+<section class="feed-container">
+  <h3>인증 신규 등록</h3>
+
+  <form id="twit-form" method="post" enctype="multipart/form-data">
+    <div class="img-preview">
+      <label for="img" class="sqyare-icon"
+        ><i class="far fa-plus-square"></i
+      ></label>
+      <input
+        id="img"
+        style="display: none"
+        type="file"
+        accept="image/*"
+        multiple
+      />
+    </div>
+
+    <div class="rating-wrap">
+      <p>인증지 평가</p>
+      <div class="startRadio">
+        <fieldset>
+          <input type="radio" name="star" value="5" id="rate5" /><label
+            class="star-label"
+            for="rate5"
+            >⭐</label
+          >
+          <input type="radio" name="star" value="4" id="rate4" /><label
+            class="star-label"
+            for="rate4"
+            >⭐</label
+          >
+          <input type="radio" name="star" value="3" id="rate3" /><label
+            class="star-label"
+            for="rate3"
+            >⭐</label
+          >
+          <input type="radio" name="star" value="2" id="rate2" /><label
+            class="star-label"
+            for="rate2"
+            >⭐</label
+          >
+          <input type="radio" name="star" value="1" id="rate1" /><label
+            class="star-label"
+            for="rate1"
+            >⭐</label
+          >
+        </fieldset>
+      </div>
+    </div>
+    <br />
+    <div class="input-group">
+      <p>도전내용</p>
+      <textarea
+        id="twit"
+        name="content"
+        maxlength="100"
+        cols="50"
+        rows="5"
+        placeholder="100자 내 도전내용을 작성해주세요."
+      ></textarea>
+      <textarea
+        type="text"
+        name="hashtag"
+        id="text_field"
+        cols="50"
+        rows="5"
+        placeholder="#태그명을 통해서 검색 태그를 등록 할 수 있습니다.   예시: #북한산 #뷰맛집 #등린이"
+      ></textarea>
+    </div>
+    <button id="twit-btn" type="submit" class="btn">인증하기</button>
+  </form>
+</section>
+{% endblock %} {% block script %}
+<script src="/club/javascripts/clubupload.js"></script>
+{% endblock %}

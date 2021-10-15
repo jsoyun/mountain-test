@@ -1,0 +1,42 @@
+{%extends "layout.html" %} {% block css %}<link
+  rel="stylesheet"
+  href="/mypage/stylesheets/modify.css"
+/>
+{%endblock%} {%block content%}
+
+<div class="modify-timeline">
+  <!-- <h2>정보 수정하기</h2> -->
+  <!-- <a href="/view">수정취소</a> -->
+  <form id="modify-form" action="modify" method="POST">
+    <div class="input-group">
+      <label for="modify-email">이메일</label>
+      <input
+        id="modify-email"
+        type="email"
+        name="email"
+        value="{{user.email}}"
+        readonly
+      />
+    </div>
+    <div class="input-group">
+      <label for="modify-nick" class="modify-nick">닉네임</label>
+      <input id="modify-nick" type="text" name="nick" />
+    </div>
+    <div class="img-preview">
+      <img id="img-preview" src="{{user.img}}" width="250" alt="미리보기" />
+      <input id="img-url" type="hidden" name="url" />
+    </div>
+    <label class="submit-btn submit-file" id="img-label" for="img"
+      >프로필 변경</label
+    >
+    <input id="img" type="file" accept="image/*" style="display: none" />
+    <!-- <div class="input-group">
+      <label for="modify-password">비밀번호</label>
+      <input id="modify-password" type="password" name="password" />
+    </div> -->
+    <button id="modify-form-btn" type="submit" class="btn">변경</button>
+  </form>
+</div>
+{%include "footer.html"%} {%endblock%} {%block script%}
+<script src="/mypage/javascripts/modify.js"></script>
+{%endblock%}

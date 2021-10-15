@@ -1,0 +1,49 @@
+{% extends "layout.html" %} {% block css %}
+<link rel="stylesheet" href="/mypage/stylesheets/mypage.css" /> {% endblock %}
+{% block content %}
+<section class="timeline">
+  <a id="modify" href="/modify" class="btn">정보 수정</a>
+
+  <div class="user-name">{{'안녕하세요! ' + user.nick + '님'}}</div>
+  <div id="followCount">
+    <span class="half">
+      <span>팔로잉</span>
+      <span class="count following-count">{{followingCount}}</span>
+    </span>
+    <span class="half">
+      <span>팔로워</span>
+      <span class="count follower-count">{{followerCount}}</span>
+    </span>
+  </div>
+  <!-- <div class="half">
+    <div>좋아요</div>
+    <div class="count likers-count">{{likersCount}}</div>
+  </div> -->
+
+  <div id="userImg">
+    <!-- <p>
+    <div class="mypage-img">{{signupImages.content}}</div>
+    </p> -->
+    <img class="userImg" src="{{signupImages.img}}" alt="섬네일" />
+  </div>
+
+  <div id="follow-List">
+    <div class="followings">
+      <h2>팔로잉 목록</h2>
+      {% if user.Followings %} {% for following in user.Followings %}
+      <div>{{following.nick}}</div>
+      {% endfor %} {% endif %}
+    </div>
+    <div class="followers">
+      <h2>팔로워 목록</h2>
+      {% if user.Followers %} {% for follower in user.Followers %}
+      <div>{{follower.nick}}</div>
+      {% endfor %} {% endif %}
+    </div>
+  </div>
+  <a href="/mypage/{{signupImages.id}}/delete">계정 삭제하기</a>
+</div>
+</section>
+{%include "footer.html"%}
+{% endblock %}{% block script %} 
+{% endblock %}

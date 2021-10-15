@@ -1,0 +1,90 @@
+:root {
+  /* --btn-main-font: Cafe24SsurroundAir;
+  --btn-font-family: Cafe24SsurroundAir; */
+  --search-bg-color: white;
+  --btn-radius: 10px;
+  --btn-height: 1vw;
+  --btn-bg-height: 2.5vw;
+  --search-width: 21vw;
+  --search-btn-width: 1vw;
+  --search-bg-width: 10vw;
+  --select-border-color: #bababa;
+  --select-width: 6vw;
+  --tb-font-family: SpoqaHanSansNeo-Regular;
+}
+
+.modify-timeline {
+  margin: 0;
+  padding: 5%;
+  display: grid;
+
+  /* width: 100vmin; */
+  /* height: 100vmin; */
+  font-family: var(--btn-font-family), sans-serif;
+  color: black;
+  line-height: normal;
+}
+
+h2 {
+  font-family: var(--btn-font-family), sans-serif;
+}
+
+#img-label {
+  /* border: 1px solid black; */
+  border-radius: 5px;
+  /* display: block; */
+  /* margin: 0 auto; */
+  float: right;
+  /* padding: 0.2em; */
+  margin-right: 2vw;
+  padding: 0.2em;
+}
+
+#img-label:hover {
+  background-color: #bababa;
+}
+
+#modify-form {
+  /* background-color: aqua; */
+  margin: 0vw auto;
+}
+
+.input-group {
+  margin: 2vw;
+  font-weight: bold;
+  /* 추가해봄 */
+}
+
+#img-preview {
+  border-radius: 3rem;
+  margin: 2vw 2vw 0vw 2vw;
+}
+
+.modify-nick:hover {
+  color: #55b1a3;
+}
+
+.input-group input {
+  height: auto;
+  line-height: normal;
+  padding: 0.5em 0.5em;
+  background-color: #bababa;
+  border: none;
+  border-radius: 3px;
+}
+
+.btn {
+  width: 10vw;
+  /* float: right; */
+  /* margin-top: auto; */
+  margin: 0 auto;
+  display: block;
+  margin-top: 6vw;
+  padding: 0.5em;
+  border: none;
+}
+
+.btn:hover {
+  color: white;
+  background-color: #55b1a3;
+}

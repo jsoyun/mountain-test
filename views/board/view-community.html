@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/board/stylesheets/view-community.css">
+{% endblock %}
+
+{% block content %}
+<section class="community-view-box">
+    <div class="community-view-title">
+        <h1>커뮤니티</h1>
+        <div class="community-a-click">
+        <a href="/community/page?offset=0&limit=5">목록으로</a>
+        {% if communityTwits.id === user.id %}
+        <a href="/edit/{{communityTwits.id}}">수정하기</a>
+        <a href="/view/{{communityTwits.id}}/delete">삭제하기</a>
+        {% endif %}
+       </div>
+    </div>
+
+    <body>
+        <div id="community-contents">
+            <!-- <i class="fas fa-thumbs-up"></i>
+            <i class="far fa-thumbs-up"></i> -->
+          <div class="communitytwit-contents-title">
+            <p class="contents-id">{{communityTwits.id}}</p> <!-- 확인 차 넣은 수 -->
+            <p>{{communityTwits.title}}</p>
+            <p>
+            <div class="board-nick">{{communityTwits.User.nick}}</div>
+            </p>
+            <p>
+            <div class="board-createdAt">{{communityTwits.createdAt}}</div>
+            </p>
+            <p>조회수 : {{communityTwits.views}}</p>
+          </div>
+        </div>
+        <div id="board-content-img">
+            <p>
+            <div class="board-content">{{communityTwits.content}}</div>
+            </p>
+            {% if communityTwits.img != false %}
+            <!-- 사진이 없으면 보여주지 않는다. -->
+            <img class="community-img" src="{{ communityTwits.img }}">
+            {% endif %}
+        </div>
+    </div>
+    {% if user and user.id %}
+    <div id="comments-container">
+        <form class="comments-box" id="comments-input-form">
+            <div class="comments-box-title" id="comments-title">댓글</div>
+            <input class="comments-box-input" id="comments-input" type="text" name="comment">
+            <button class="comments-button" id="comments-input-button" type="submit">제출</button>
+        </form>
+        <div id="comments-list">
+        </div>
+    </div>
+    {%else%}
+    <div id="comments-container">
+        <div id="comments-title">댓글기능은 로그인 후 이용하실수 있습니다.</div>
+        <div id="comments-list">
+        </div>
+    </div>
+    {%endif%}
+</section>
+{%include "footer.html"%}
+{% endblock %}
+
+{% block script %}
+<script src="/board/javascripts/view-community.js"></script>
+{% endblock %}

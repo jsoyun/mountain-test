@@ -1,0 +1,71 @@
+{% extends "layout.html" %} {% block css %} {% endblock %} {% block content %}
+<section>
+  <div class="content right illustration_01">
+    <div class="content-box_01">
+      <h2 class="box-title">in to the mountain</h2>
+      <p class="box-text">
+        'dd명산100'은 우리나라의 대표적인 산 100개를 오르는 프로그램 입니다.
+        ‘명산100’ 프로그램은 자신을 찾아 떠나는 여정이자 도전으로, 산과 사람을
+        연결하며 삶을 더욱 가치 있게 만들기 위해 노력하는 산행 프로그램입니다.
+        단순히 등산 프로그램을 넘어 산을 통해 많은 사람이 인간관계를 형성하고
+        소통하며 발전하는 것을 목표로 합니다.
+      </p>
+      <legend class="box-text">명산100</legend>
+      <pre class="box-text">총산행횟수 : 2,842,002회</pre>
+    </div>
+  </div>
+  <div class="separator">
+    <h1>사람과 사람, 사람과 자연, 사람과 지역을 연결하는 커뮤니티!</h1>
+  </div>
+  <div class="content left illustration_02">
+    <h2 class="content-t2">Challenge program feed</h2>
+    <!-- {% for twit in twits %} -->
+    <a class="img_section" href="/clubdetail">
+      <div class="trans_inner">
+        <div id="img-layout">
+          <img class="img-club" src="{{twit.img}}" alt="상세이미지" />
+        </div>
+      </div>
+    </a>
+    <!-- {% endfor %} -->
+  </div>
+  <div class="separator separator-header">
+    <h1>도전의 가치를 알며 자연과 함께하는 사람들의 커뮤니티 공간</h1>
+  </div>
+  <div class="content right illustration_03">
+    <h1 class="box-title">"Take less Bring More"</h1>
+    <p class="box-text">
+      산을 중심으로 뜻 깊은 경험을 선사해줄 다양한 프로그램을 제공하고 있습니다.
+      대한민국을 대표하는 100대 명산을 오르는 ‘명산 100’ 프로그램, 한국의
+      백두대간을 거니는 ‘백두대간‘ 프로그램, 우리나라 대표적인 섬을 여행하는
+      프로젝트인 ‘섬&산‘ 프로그램, 아름다운 산을 우리 손으로 직접 지키는
+      ‘클린마운틴365’ 캠페인까지. 회원과 함께 더욱더 즐겁고 지속가능한 등산을
+      위해 함께 합니다.
+    </p>
+  </div>
+</section>
+{% endblock %} {% block script %}
+<script>
+  /* 인스타 캐러셀 구현 */
+  const stories = document.querySelectorAll("#stories-container button");
+
+  stories.forEach((story) => {
+    story.addEventListener("click", (e) => {
+      stories.forEach((s) => {
+        s.classList.remove("active");
+      });
+      if (story.querySelector(".profile").classList.contains("empty"))
+        return false;
+
+      story.classList.add("active");
+    });
+  });
+</script>
+<script>
+  window.onload = () => {
+    if (new URL(location.href).searchParams.get("loginError")) {
+      alert(new URL(location.href).searchParams.get("loginError"));
+    }
+  };
+</script>
+{% endblock %}

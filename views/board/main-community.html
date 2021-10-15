@@ -1,0 +1,124 @@
+{% extends 'layout.html' %} {% block css %}
+<link rel="stylesheet" href="/board/stylesheets/main-community.css" />
+{% endblock %} {% block content %}
+<section class="com-box">
+  <div class="com-header">
+    <!-- <h1 class="com-title">게시판</h1> -->
+    <a class="com-write" href="/write"><i class="fas fa-user-edit"></i></a>
+    <div class="field">
+      <form id="search-form" action="/search">
+        <select class="com-select" name="select" id="select">
+          <option value="titleContent" selected>제목/내용</option>
+          <option value="title">제목</option>
+          <option value="content">내용</option>
+          <option value="user">작성자</option>
+        </select>
+        <input class="text-search" type="text" name="search" placeholder="검색" />
+        <button class="text-search-btn btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <input id="select-data" type="hidden" name="title" />
+      </form>
+    </div>
+  </div>
+  <div class="table-body">
+    <table class="com-table">
+      <thead class="table-head">
+        <tr class="table-item-box">
+          <th class="item-num">번호</th>
+          <th class="item-title">제목</th>
+          <th class="item-nick">작성자</th>
+          <th>날짜</th>
+          <th class="item-num">조회</th>
+          <th class="item-num">댓글</th>
+          <!-- <th>추천</th> -->
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        {% for communityTwit in communityTwits %}
+        <tr class="post table-item-box">
+          <td>
+            <div class="CommunityPost-title">{{communityTwit.id}}</div>
+          </td>
+          <td>
+            <a class="tb-text" href="/view/{{communityTwit.id}}">
+              <p class="tb-text-item">{{communityTwit.title}}</p>
+            </a>
+          </td>
+          <td>
+            <div class="user-nick">{{communityTwit.User.nick}}</div>
+          </td>
+          <td>
+            <div id="com-creatAt" class="communityPost-createAt">
+              {{communityTwit.createdAt}}
+            </div>
+          </td>
+          <td>{{communityTwit.views}}</td>
+          <td>{{communityTwit.Communitycomments.length}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  <footer>
+    <ul>
+      {% if allBoard < 1 %} <!-- DB 에 없을 경우 -->
+        <h1>현재 게시글이 없습니다.</h1>
+        {% else %}
+        <!-- DB 에 있을 경우 -->
+        <li class="page-num">
+          <a class="page-link" href="/community/page?offset=0&limit=5">1</a>
+        </li>
+        {% if nowPage < 3 %} {% if maxPage < 5 %} <!-- 5 페이지 보다 적을 경우 1 2 3 4 5 까지 표기할 수 있게 아래 for 문 반복 -->
+          {% for i in range(2, maxPage) -%}
+          <li class="page-num">
+            <a class="page-link" href="/community/page?offset={{5*(i-1)}}&limit=5">{{i}}</a>
+          </li>
+          {%- endfor %} {% else %}
+          <!-- 5 페이지 보다 많을 경우 1 2 3 4 ... 표기할 수 있게 아래 for 문 반복 -->
+          {% for i in range(2, 5) -%}
+          <li class="page-num">
+            <a class="page-link" href="/community/page?offset={{5*(i-1)}}&limit=5">{{i}}</a>
+          </li>
+          {%- endfor %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...... {% endif %} {%
+          elseif nowPage < (maxPage-3) %} {% if nowPage>= 3 or maxPage < 6 %} <!-- 5페이지 보다 많고 현재페이지가 4를 넘어갈시 ... 2 3 4 5
+              6 ... 표기 -->
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......
+              <li class="page-num">
+                <a class="page-link" href="/community/page?offset={{(nowPage-1)*5}}&limit=5">{{nowPage - 1}}</a>
+              </li>
+              <li class="page-num">
+                <a class="page-link" href="/community/page?offset={{(nowPage-1)*5}}&limit=5">{{nowPage}}</a>
+              </li>
+              <li class="page-num">
+                <a class="page-link" href="/community/page?offset={{nowPage*5}}&limit=5">{{nowPage + 1}}</a>
+              </li>
+              <li class="page-num">
+                <a class="page-link" href="/community/page?offset={{(nowPage+1)*5}}&limit=5">{{nowPage + 2}}</a>
+              </li>
+              <li class="page-num">
+                <a class="page-link" href="/community/page?offset={{(nowPage+2)*5}}&limit=5">{{nowPage + 3}}</a>
+              </li>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...... {% endif %} {% elseif nowPage
+              >= (maxPage-3) %}
+              <!-- 현재페이지가 마지막 페이지의 3번째 전에 왔을 때 ... (n-2) (n-1) (n) 표기 -->
+              {% if maxPage < 5 %} {% for i in range(2, maxPage) -%} <li class="page-num">
+                <a class="page-link" href="/community/page?offset={{5*(i-1)}}&limit=5">{{ i }}</a>
+                </li>
+                {%- endfor %} {% else %} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...... {% for
+                i in range((maxPage-3), maxPage) -%}
+                <li class="page-num">
+                  <a class="page-link" href="/community/page?offset={{5*(i-1)}}&limit=5">{{ i }}</a>
+                </li>
+                {%- endfor %} {% endif %} {% endif %} {% if maxPage > 1 %}
+                <li class="page-num">
+                  <a class="page-link" href="/community/page?offset={{(maxPage-1)*5}}&limit=5">{{ maxPage }}</a>
+                </li>
+                {% endif %} {% endif %}
+    </ul>
+  </footer>
+</section>
+{%include "footer.html"%} {% endblock %} {% block script %}
+<script src="/board/javascripts/main-community.js"></script>
+
+{% endblock %}

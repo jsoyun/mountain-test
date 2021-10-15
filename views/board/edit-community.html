@@ -1,0 +1,40 @@
+{% extends "layout.html" %} {% block css %}
+<link rel="stylesheet" href="/board/stylesheets/write-community.css" />
+{% endblock %} {% block content %}
+<section class="community-edit-box">
+  <div class="community-eit-title">
+    <h1>게시판 수정</h1>
+    <a href="/view/{{communityTwits.id}}">수정취소</a>
+  </div>
+
+  <body>
+    <form class="community" method="POST" action="">
+      <fieldset class="community-upload">
+        <div class="community-upload-title">
+          <textarea class="upload-title-text upload-text" name="title" id="title" cols="80" rows="1" required>
+{{communityTwits.title}}</textarea>
+        </div>
+        <div class="community-upload-content upload-text">
+          <div class="img-preview">
+            {% if communityTwits.img %}
+            <img id="img-preview" src="{{communityTwits.img}}" width="300px" alt="미리보기" />
+            {% endif %}
+            <input id="img-url" type="hidden" name="url" />
+          </div>
+          <div>
+            <textarea class="community-upload-text upload-text" name="content" id="content" cols="80" rows="8" required>
+{{communityTwits.content}}</textarea>
+          </div>
+        </div>
+      </fieldset>
+      <div class="community-submit">
+        <label class="submit-btn submit-file" id="img-label" for="img">첨부 파일</label>
+        <input id="img" type="file" accept="image/*" style="display: none" />
+        <button class="submit-btn" type="submit">수정 완료</button>
+      </div>
+    </form>
+  </body>
+</section>
+{%include "footer.html"%} {% endblock %} {% block script %}
+<script src="/board/javascripts/edit-community.js"></script>
+{% endblock %}

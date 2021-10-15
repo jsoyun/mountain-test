@@ -1,0 +1,23 @@
+#footer-container {
+position: fixed;
+  background: grey;
+  color: white;
+  height: 60px;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  height: 150px;
+}
+#footer-container nav {
+  padding: 2vw;
+  text-align: left;
+  line-height: 2vw;
+  color: rgba(201, 201, 201, 0.733);
+}
+
+@media screen and (max-width: 800px) {
+  nav {
+    line-height: 4vw;
+  }
+}

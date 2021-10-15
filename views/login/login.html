@@ -1,0 +1,57 @@
+{% extends "layout.html" %} {% block css %}
+<link rel="stylesheet" href="/login/stylesheets/login.css" />
+{% endblock %} {% block content %}
+<section class="login-form">
+  <div class="login">
+    <img class="login-img" src="/images/logo.png" alt="into the mountain" />
+  </div>
+  <div>
+    <form method="POST">
+      <div id="int-area">
+        <input
+          class="one-input"
+          type="text"
+          name="email"
+          id="email"
+          placeholder="이메일"
+          autocomplete="off"
+        />
+        <label for="email" style="display: none"></label>
+      </div>
+      <div id="int-area">
+        <input
+          class="one-input"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="비밀번호"
+          autocomplete="off"
+        />
+        <label for="password" style="display: none"></label>
+      </div>
+      <div id="btn-area">
+        <button class="login-btn" type="submit">로그인</button>
+      </div>
+    </form>
+  </div>
+  <div id="caption">
+    <p class="caption-box">
+      <!-- 비밀번호찾기 안해서 빼야되겠다 -->
+      <!-- <a class="caption-text" href="/findinfo" onclick="">비밀번호 찾기</a>
+      <span class="caption-text"> | </span> -->
+      <a class="caption-text" href="/signup">회원가입</a>
+    </p>
+    <p>
+      <a href="/login/kakao"
+        ><img class="login-logo" src="/images/kakao.jpg" alt="카카오 로그인"
+      /></a>
+      <a href="/login/google"
+        ><img class="login-logo" src="/images/google.png" alt="구글 로그인"
+      /></a>
+      <a href="/login/naver"
+        ><img class="login-logo" src="/images/naver.jpg" alt="네이버 로그인"
+      /></a>
+    </p>
+  </div>
+</section>
+{%include "footer.html"%} {% endblock %} {% block script %} {% endblock %}

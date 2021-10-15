@@ -1,0 +1,226 @@
+:root {
+  --search-bg-color: white;
+  --btn-radius: 10px;
+  --btn-height: 1vw;
+  --btn-bg-height: 2.5vw;
+  --search-width: 21vw;
+  --search-btn-width: 1vw;
+  --search-bg-width: 10vw;
+  --select-border-color: #bababa;
+  --select-width: 6vw;
+  --tb-font-family: SpoqaHanSansNeo-Regular;
+}
+
+/* 버튼 공통 */
+.btn {
+  border: none;
+  padding: 0.5vw;
+  border-radius: var(--btn-radius);
+  background-color: beige;
+  height: var(--btn-bg-height);
+}
+
+/* 상단 */
+.com-write {
+  text-align: none;
+  position: fixed;
+  right: 6vw;
+  bottom: 3vw;
+  margin-bottom: 160px;
+  font-size: 2.5vw;
+  background-color: white;
+  padding: 0.8em;
+  border-radius: 50%;
+  padding-left: 1em;
+}
+
+.com-write:hover {
+  color: #55b1a3;
+}
+
+/* 태그 검색 */
+.text-search {
+  border: transparent;
+  width: var(--search-bg-width);
+  height: var(--btn-height);
+  border-radius: var(--btn-radius);
+  font-size: 1vw;
+  padding-left: 1em;
+  padding: 0.9vw;
+  -webkit-box-shadow: 0 0 0px 1000px var(--search-bg-color) inset !important;
+  -webkit-text-fill-color: var(--btn-bg-color) !important;
+}
+
+.field {
+  background-color: var(--search-bg-color);
+  height: var(--btn-bg-height);
+  width: var(--search-width);
+  border-radius: 8px;
+  position: absolute;
+  right: 13vw;
+
+  margin-top: 3vw;
+}
+#search-form {
+  /* border: solid 2px #55b1a3; */
+  margin: 0;
+  padding: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.text-search-btn .fa-search {
+  width: var(--search-btn-width);
+  height: var(--btn-height);
+  font-size: 0.9vw;
+  padding-bottom: 3vw;
+}
+
+.text-search-btn {
+  position: relative;
+  background-color: var(--search-bg-color);
+  right: 0.01em;
+}
+
+.text-search-btn:hover {
+  cursor: pointer;
+}
+
+/* 검색 select 부분 */
+.com-select {
+  border-color: var(--select-border-color);
+  font-family: var(--btn-font-family);
+  width: var(--select-width);
+  height: var(--btn-bg-height)-1vw;
+  font-size: 0.9vw;
+}
+
+.com-select:hover {
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+
+/* table 전체 */
+.table-body {
+  margin-top: 7vw;
+}
+
+.table-item-box th {
+  padding: 1em;
+}
+
+.table-item-box td {
+  padding: 1em;
+  background-color: #55b1a380;
+  vertical-align: middle;
+  
+}
+.table-item-box p {
+ padding-bottom: 0;
+}
+
+.com-box {
+  font-family: var(--tb-font-family), sans-serif;
+  text-align: center;
+  padding-top: 2vw;
+  margin-bottom: 200px;
+}
+
+.table-head {
+  border-top: 2px solid var(--select-border-color);
+  border-bottom: 1px solid var(--select-border-color);
+}
+
+.table-item-box {
+  border-bottom: 1px solid var(--select-border-color);
+}
+
+h1,
+thead,
+tbody,
+tr,
+th {
+  font-size: 1.5vw;
+  width: 8em;
+  height: 3em;
+}
+
+h1 {
+  margin-left: 38vw;
+  width: 20vw;
+}
+
+.com-title {
+  font-family: var(--tb-font-family), sans-serif;
+  font-size: 2vw;
+  font-weight: bolder;
+  margin: 0 0 1.4vw 10vw;
+  margin-top: 1.5vh;
+
+  height: auto;
+
+  color: rgba(85, 177, 163);
+
+  padding-left: 3vw;
+}
+
+.com-table {
+  margin: 2vw auto;
+}
+
+.not-table {
+  margin: 0 auto;
+}
+
+/* 번호란 */
+.item-num {
+  width: 6vw;
+}
+
+/* 제목란 */
+.tb-text {
+  display: inline-block;
+  align-items: center;
+  text-decoration: none;
+}
+
+.tb-text-item {
+  display: inline-block;
+}
+
+.tb-img {
+  display: inline-block;
+  width: 4vw;
+}
+
+.item-title {
+  width: 30vw;
+}
+
+/* 작성자란 */
+.item-nick {
+  width: 15vw;
+}
+
+/* 페이지 */
+.page-num {
+  list-style: none;
+  display: inline-block;
+  padding-left: 2em;
+  font-size: 1.7vw;
+}
+
+.page-link {
+  text-decoration-line: none;
+}
+
+/* #search-form {
+  background-color: #55b1a3;
+  border-radius: 10px;
+  padding: 3px;
+} */

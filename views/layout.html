@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  <link rel="shortcut icon" href="/images/logo.png" />
+  <link rel="stylesheet" href="/main/stylesheets/reset.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+    integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+  <link rel="stylesheet" href="/main/stylesheets/common.css" />
+  <link rel="stylesheet" href="/main/stylesheets/main.css" />
+  <link rel="stylesheet" href="/footer.css">
+  <link rel="stylesheet" href="/main/stylesheets/font.css" />
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+  <!-- <link rel="stylesheet" href="/main/stylesheets/layout.css" /> -->
+  {% block css %} {% endblock %}
+</head>
+
+<body>
+  <header id="header">
+    <div id="header-logo">
+      <a href="/"><img class="logo-img" src="/images/logo.png" alt="in to the mountain" /></a>
+    </div>
+
+    <nav class="mynav">
+      <ul>
+        <li class="nav-item">
+          <a class="nav-link link" href="/">ABOUT US</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link" href="/club">도전클럽</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link" href="/infomountain">100대 명산 정보</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link" href="/community">게시판</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a class="nav-link link" href="/">캠페인</a>
+          </li> -->
+        </ul>
+      </nav>
+      <div id="header-right-container">
+        {% if user and user.id %}
+        <p class="hello">
+          <div class="hi">
+            {{'안녕하세요! ' + user.nick + '님'}}
+            <span class="hello-item">
+              <a class="hello-item-fa" href="/mypage" class="sprite_user_icon_outline"><i class="far fa-user"></i></a>
+            </span>
+          </div>
+          <div class="logout-text">
+            <a href="/logout">로그아웃</a>
+          </div>
+          <input id="my-id" type="hidden" value="{{user.id}}" />
+        </p>
+        {% else %}
+        <div class="logout-text">
+          <a href="/login">로그인</a>
+        </div>
+        {% endif %}
+        <div class="icons-box">
+          <div class="weather-api">
+            <h5 id="city-name"></h5>
+            <h5 id="weather"></h5>
+            <img id="weather-img"></img>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {% block content %} {% endblock %}
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/main/javascripts/weatherAPI.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+{% block script %}
+{% endblock %}
+
+</html>

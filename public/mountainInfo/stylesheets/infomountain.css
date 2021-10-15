@@ -1,0 +1,226 @@
+:root {
+  /* --btn-main-font: Cafe24SsurroundAir;
+  --btn-font-family: Cafe24SsurroundAir; */
+  --btn-main-font: Noto Sans KR;
+  --btn-font-family: Noto Sans KR;
+  --search-bg-color: white;
+  --btn-radius: 10px;
+  --btn-height: 1vw;
+  --btn-bg-height: 2.5vw;
+  --search-width: 21vw;
+  --search-btn-width: 1vw;
+  --search-bg-width: 10vw;
+  --select-border-color: #bababa;
+  --select-width: 6vw;
+  --tb-font-family: SpoqaHanSansNeo-Regular;
+}
+
+#mountain-section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 200px;
+  }
+
+  #kor-img-container {
+    background-image: url("/images/kormap.png");
+    width: 500px;
+    height: 700px;
+    /* border: 1px solid red; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  #kor-img-container button {
+    font-size: 1.3vw;
+    font-weight: bold;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  #kor-img-container button:hover {
+font-size: 1.7vw;
+    font-weight: bold;
+    color: brown;
+}
+
+  #kor-img-container #se {
+    position: absolute;
+    left: 120px;
+    top: 150px;
+  }
+
+  #kor-img-container #kw {
+    position: absolute;
+    left: 280px;
+    top: 130px;
+  }
+
+  #kor-img-container #cn {
+    position: absolute;
+    left: 100px;
+    top: 300px;
+  }
+
+  #kor-img-container #cb {
+    position: absolute;
+    left: 200px;
+    top: 230px;
+  }
+
+  #kor-img-container #kb {
+    position: absolute;
+    right: 150px;
+    top: 350px;
+  }
+
+  #kor-img-container #kn {
+    position: absolute;
+    right: 150px;
+    bottom: 200px;
+  }
+
+  #kor-img-container #jb {
+    position: absolute;
+    left: 110px;
+    bottom: 260px;
+  }
+
+  #kor-img-container #jn {
+    position: absolute;
+    left: 70px;
+    bottom: 170px;
+  }
+
+  #kor-img-container #je {
+    position: absolute;
+    left: 80px;
+    bottom: 30px;
+  }
+
+  #mountain-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: space-evenly;
+  }
+
+  .mountain-list-summury {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    height: 20vw;
+    justify-content: space-around;
+    margin-bottom: 1em;
+    border: 3px solid #55b1a3;
+    padding: 0.5em;
+    font-size: 1.5vw;
+    word-break: keep-all;
+    line-height: 130%;
+  }
+
+  .mountain-summury-name:hover {
+    cursor: pointer;
+    font-size: 3vw;
+    color: #55b1a3;
+  }
+
+  .mountain-summury-name {
+    font-size: 2vw;
+    font-weight: bold;
+  }
+
+  @media screen and (max-width:550px) {
+
+    .mountain-list-summury {
+      font-size: 1vw;
+      width: 180px;
+      height: 100px;
+      word-break: keep-all;
+      line-height: 130%;
+    }
+  }
+
+
+.mountain-list-container {
+  font-family: var(--btn-font-family), sans-serif;
+  /* display: grid;
+  grid-template-columns: 30vw 30vw 30vw; */
+  line-height: normal;
+  padding: 3vw;
+  margin: 3vw;
+  min-width: 5vw;
+}
+
+h1 {
+  /* font-family: var(--btn-font-family), sans-serif; */
+  font-family: "Noto Sans KR", sans-serif;
+  text-align: center;
+  margin: 5vh;
+
+  font-weight: bolder;
+  font-size: 3vw;
+  color: rgba(85, 177, 163, 0.884);
+  padding-left: 3vw;
+}
+
+.mountain-name {
+  text-align: center;
+  font-size: 3vw;
+  color: black;
+  margin: 5vw;
+  text-align: center;
+  font-weight: bold;
+  /* background-color: cadetblue;
+  padding: 5px 0.5em 0 0.5em;
+  border-radius: 3px; */
+}
+
+.mountain-height {
+  text-align: center;
+  color: grey;
+  margin: 5vw;
+  text-align: center;
+}
+.mountain-address {
+  text-align: center;
+  color: black;
+  margin: 5vw;
+  text-align: center;
+  grid-template-columns: 1;
+}
+.mountain-overview {
+  line-height: 4vh;
+  margin-bottom: 2vh;
+  color: black;
+  text-align: justify;
+}
+.mountain-transport {
+  line-height: 4vh;
+  margin-bottom: 2vh;
+  color: black;
+  text-align: justify;
+}
+.mountain-tour {
+  line-height: 4vh;
+  margin-bottom: 2vh;
+  color: black;
+  text-align: justify;
+}
+.mountain-etctour {
+  line-height: 4vh;
+  margin-bottom: 2vh;
+  color: black;
+
+  background-color: #55b1a373;
+  border-radius: 3px;
+  text-align: justify;
+}

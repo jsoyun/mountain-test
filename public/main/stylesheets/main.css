@@ -1,0 +1,555 @@
+/* 레이아웃 스타일 */
+body {
+  background: #ffffff;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  margin: 0;
+  color: black;
+  display: flex;
+  flex-flow: column;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  position: relative;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 20%;
+  max-height: 150px;
+  padding: 1%;
+}
+
+header #header-logo {
+  height: 100%;
+}
+
+.mynav ul {
+  display: flex;
+  flex-flow: row;
+  padding: 0;
+}
+
+.mynav ul li {
+  display: flex;
+  list-style: none;
+  padding: 1.2em;
+  flex-flow: row;
+  padding: 0;
+}
+
+.mynav a {
+  font-size: 2.75vh;
+  color: rgb(38, 38, 38);
+  text-decoration: none;
+  margin: 1.1em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.mynav ul li a:before {
+  content: "";
+  width: 0px;
+  height: 3px;
+  background: #2ca573;
+  position: absolute;
+  top: 120%;
+  left: 0;
+  transition: 1s;
+  mix-blend-mode: multiply;
+}
+
+.mynav ul li a:after {
+  content: "";
+  width: 0px;
+  height: 3px;
+  background: #47a6dd;
+  position: absolute;
+  top: 120%;
+  right: 0;
+  transition: 1s;
+  mix-blend-mode: multiply;
+}
+
+.mynav ul li:hover a:before {
+  width: 50%;
+  transform: translateX(100%);
+}
+.mynav ul li:hover a:after {
+  width: 50%;
+  transform: translateX(-100%);
+}
+
+header .hello {
+  font-size: 1.9vh;
+  position: absolute;
+  top: 2.5em;
+  right: 3.6em;
+}
+
+.hi {
+  display: inline-block;
+  position: absolute;
+  top: 1.47em;
+  right: 1.8em;
+  font-size: 1.2vw;
+}
+
+.hello-item-fa {
+  font-size: 1.8vw;
+  font-weight: bolder;
+  color: black;
+}
+
+.hello-item-fa:hover {
+  color: #55b1a3;
+}
+
+.logout-text {
+  position: absolute;
+  top: 4.17em;
+  right: 1.8em;
+  font-size: 1vw;
+}
+
+.logout-text a {
+  color: #000000;
+  text-decoration-line: none;
+}
+
+.logout-text:hover a {
+  text-decoration-line: underline;
+}
+
+.hello-item-logout {
+  font-size: 1.9vh;
+  position: absolute;
+  top: 3.4em;
+  right: 7.7em;
+}
+
+#header .right_icons {
+  width: 4vw;
+  height: 4vh;
+  display: flex;
+  flex-flow: row;
+}
+
+section {
+  width: 100%;
+  height: 80%;
+  /* overflow: scroll; */
+  display: flex;
+  flex-direction: column;
+}
+
+#weather {
+  font-size: 1.3vw;
+}
+
+.logo-img {
+  width: 15vw;
+  height: 7.5vw;
+}
+
+.weather-api {
+  font-size: 0.795em;
+  margin-left: 2vw;
+  margin-top: 4.5vw;
+  display: inlinek;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.weather-api img {
+  width: 2.79vw;
+  height: 2.79vw;
+}
+
+.target {
+  /* body 가 부모인상황인데 부모가 아무값이 없으니까 화면기준이 된다. */
+  position: absolute;
+  border-bottom: 0.215em solid transparent;
+  padding: 0.85em;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 1em;
+  font-family: "Pretendard-Regular";
+  background-color: #fff;
+  color: #d9d9d9;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Pretendard-Regular";
+  line-height: 1.313em;
+}
+
+h1 {
+  font-size: 1.52em;
+  margin: 0.563em 0;
+  color: #000000;
+  text-shadow: -1px 0 rgb(13, 139, 76);
+}
+h2 {
+  font-size: 1.4em;
+  margin: 0.625em 0;
+  text-align: center;
+}
+h3 {
+  font-size: 1.215em;
+  margin: 1.125em 0;
+}
+h4 {
+  font-size: 1.2em;
+  margin: 1.313em 0;
+}
+h5 {
+  font-size: 1em;
+  margin: 1.313em 0;
+}
+h6 {
+  font-size: 1em;
+  margin: 0.75em 0;
+}
+P {
+  line-height: 1.52em;
+  font-size: 0.952em;
+  padding-bottom: 3vh;
+  text-align: left;
+}
+
+legend {
+  font-size: 1.25em;
+  margin: 1.12em 0.25em;
+  text-align: center;
+}
+
+pre {
+  line-height: 0.95em;
+  font-size: 1em;
+  padding-bottom: 3vh;
+  text-align: center;
+}
+
+.content {
+  font-size: 1.3rem;
+  color: #ffffff;
+  background-repeat: no-repeat;
+  background-size: 49% auto;
+  background-attachment: fixed;
+}
+.right {
+  padding: 1.618em 6.472em 3.236em 53%;
+  text-align: center;
+}
+.left {
+  padding: 2.618em 53% 4.236em 2.272em;
+}
+.illustration_01 {
+  background-color: #454746;
+  background-image: url(../../images/main0.jpg);
+  background-position: 0 50%;
+  min-height: 75vh;
+  background-attachment: fixed;
+}
+.illustration_02 {
+  background-color: #3d5745;
+  background-image: url(../../images/walking1.jpg);
+  background-position: 100% 50%;
+  height: 70vh;
+  position: relative;
+  padding-bottom: 10vh;
+}
+.illustration_03 {
+  background-color: #3d4357;
+  background-image: url(../../images/hiking.jpg);
+  background-position: 0% 100%;
+  /* width: 97vw; */
+  height: 40vw;
+}
+.separator {
+  padding: 1.8em 1.2em;
+  text-align: center;
+  font-size: 1vw;
+}
+
+.illustration_02 .img_section {
+  display: inline-flex;
+}
+
+.illustration_02 .trans_inner {
+  display: inline-flex;
+}
+
+.content-t2 {
+  font-size: 3vw;
+  margin-bottom: 2em;
+}
+.box-title {
+  font-size: 2.6vw;
+  width: 40vw;
+  font-weight: bolder;
+}
+
+.box-text {
+  font-size: 1.6vw;
+  width: 40vw;
+}
+
+.img-club {
+  width: 10vw;
+  height: 5vw;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+
+#stories-wrapper {
+  margin: 20px auto;
+  width: 100vw;
+}
+
+#stories-container {
+  display: flex;
+  border: solid 2px #fff;
+  padding: 4px 0;
+}
+
+.story {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.story .profile {
+  background: rgb(255, 201, 0);
+  background: linear-gradient(
+    36deg,
+    rgb(255, 201, 0) 13%,
+    rgb(255, 0, 95) 73%,
+    rgb(255, 9, 237) 100%
+  );
+  padding: 5px;
+  box-sizing: border-box;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.story .profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  border: solid 5px var(--bgcolor);
+}
+
+.story .title {
+  text-align: center;
+  padding: 5px 0;
+}
+
+.story.active .profile {
+  animation-duration: 1s;
+  animation-name: story;
+  animation-iteration-count: infinite;
+}
+
+.story .profile.empty {
+  background: #ccc;
+}
+
+@keyframes story {
+  0% {
+    background: linear-gradient(
+      36deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  10% {
+    background: linear-gradient(
+      72deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  20% {
+    background: linear-gradient(
+      108deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  30% {
+    background: linear-gradient(
+      144deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  40% {
+    background: linear-gradient(
+      180deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  50% {
+    background: linear-gradient(
+      216deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  60% {
+    background: linear-gradient(
+      252deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  70% {
+    background: linear-gradient(
+      288deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  80% {
+    background: linear-gradient(
+      324eg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  90% {
+    background: linear-gradient(
+      360deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+
+  100% {
+    background: linear-gradient(
+      396deg,
+      rgb(255, 255, 255) 0%,
+      rgb(255, 255, 255) 25%,
+      rgb(255, 201, 0) 28%,
+      rgb(255, 0, 95) 73%,
+      rgb(255, 9, 237) 100%
+    );
+  }
+}
+
+@media screen and (max-width: 1123px) {
+  .illustration_01 {
+    background-position: 0 0%;
+    min-height: 35vh;
+  }
+  .illustration_02 {
+    background-position: 100% 50%;
+    background-image: url(../../images/KakaoTalk_20211014_140513252.jpg);
+    /* min-height: 40vh; */
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 1123px) {
+  .mynav a {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .separator-header {
+    display: none;
+  }
+  .illustration_03 {
+    display: none;
+  }
+  .illustration_02 {
+    background-position: 100% 100%;
+    height: 45vh;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .illustration_01 {
+    background-image: url();
+    min-height: 35vh;
+  }
+  .illustration_02 {
+    display: none;
+  }
+  .right {
+    padding: 0;
+  }
+  .box-title {
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+  .box-text {
+    margin: 0 auto;
+    padding: 1em 0;
+  }
+}
+
+/* .main-footer {
+  margin-bottom: 10vw;
+} */

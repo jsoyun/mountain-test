@@ -1,0 +1,23 @@
+:root {
+  --search-width: 19vw;
+}
+
+/* 약관 css */
+.terms-box {
+  display: inline-block;
+  margin-top: 1.3vw;
+  text-align: left;
+  background-color: #fff;
+}
+
+.agree-top {
+  border-bottom: 1px solid #bababa9f;
+}
+
+.agree-text {
+  display: block;
+  font-size: 1vw;
+  width: var(--search-width);
+  padding: 0.4em 0.9em;
+  font-size: 0.8vw;
+}

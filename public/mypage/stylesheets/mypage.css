@@ -1,0 +1,101 @@
+:root {
+  /* --btn-main-font: Cafe24SsurroundAir;
+  --btn-font-family: Cafe24SsurroundAir; */
+  --search-bg-color: white;
+  --btn-radius: 10px;
+  --btn-height: 1vw;
+  --btn-bg-height: 2.5vw;
+  --search-width: 21vw;
+  --search-btn-width: 1vw;
+  --search-bg-width: 10vw;
+  --select-border-color: #bababa;
+  --select-width: 6vw;
+  --tb-font-family: SpoqaHanSansNeo-Regular;
+}
+.timeline {
+  margin: 0;
+  padding: 3% 10% 0 10%;
+  display: grid;
+
+  /* width: 100vmin; */
+  /* height: 100vmin; */
+  font-family: var(--btn-font-family), sans-serif;
+  color: black;
+}
+
+.user-name {
+  font-size: 2.5vw;
+  color: black;
+  font-weight: bold;
+  display: inline-block;
+  border-bottom: solid #55b1a3;
+  padding-bottom: 2vw;
+}
+#followCount {
+  text-align: left;
+  font-size: 1.5vw;
+  margin: 1vw 0 1vw 0;
+  /* margin-top: 3vw; */
+}
+
+/* footer {
+  text-align: right;
+  font-size: 1vw;
+} */
+
+#modify {
+  font-size: 1vw;
+  color: #bababa;
+  margin-bottom: 3vw;
+}
+.half {
+  text-align: left;
+  line-height: normal;
+}
+
+#follow-List {
+  line-height: normal;
+  vertical-align: middle;
+  font-size: 1.5vw;
+  float: left;
+  display: inline-block;
+  margin-top: 2vw;
+}
+#userImg {
+  size: 40vw;
+
+  float: left;
+}
+
+.userImg {
+  width: 10vw;
+  background-color: brown;
+  float: left;
+  border-radius: 3rem;
+}
+
+h2 {
+  display: inline-block;
+  color: #55b1a3;
+  border-radius: 2px;
+  font-size: 1.8vw;
+  font-weight: bolder;
+}
+
+section {
+  margin: 0 3vw 0 3vw;
+}
+
+section a {
+  text-align: right;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1vw;
+  color: #bababa;
+}
+
+#modify:hover,
+section a:hover {
+  color: black;
+  border-radius: 3px;
+}

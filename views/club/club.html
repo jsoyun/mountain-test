@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/club/stylesheets/club.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+  integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+{% endblock %}
+
+{% block content %}
+<section id="club-container">
+  <div class="feed-container">
+    <div class="container">
+      <div class="tag-container">
+        <form id="hashtag-form" action="/club/hashtag">
+          <input class="tag-search" type="text" name="hashtag" placeholder="" />
+          <button class="tag-search-btn btn" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- <h3>인기 피드</h3> -->
+    <div class="feed-body">
+      {% if user and user.id %}
+      <button id="feed-btn" class="uploads-btn" type="submit">
+        <a class="picture-uploads" href="/clubupload"><i class="fas fa-file-upload"></i>
+
+          인증사진 등록하기
+        </a>
+      </button>
+      {% endif %}
+
+      <h4>인증시 ITM 코인 지급</h3>
+        <p>
+          ITM에서 명산 100 및 기타 도전프로그램 또는 이벤트 인증 완료시 ITM코인(2021.10~) 이 산 높이 만큼 지급되며, ITM 제휴 아웃도어 제품 구매시 사용이 가능합니다. 사용한도는 멤버십
+          등급에 따라 다르게 적용이 되며, ITM코인
+          지급 내역 밒 멤버십 관련사항은 ITM 앱 내 [도전자 정보] > [마이페이지] 에서 확인이 가능합니다. (혜택사항은 변경 될 시 소급 적용되지 않으며, 운영정책에 따라 사전 고지 없이 중단 혹은
+          축소 될 수 있습니다.)
+        </p>
+    </div>
+    <div class="twit-container">
+      {% for twit in twits %}
+      <div class="twit">
+        <div class="con">
+          <input type="hidden" value="{{twit.User.id}}" class="twit-user-id" />
+          <input type="hidden" value="{{twit.id}}" class="twit-id" />
+          <div class="twit-author">{{twit.User.nick}}</div>
+
+          {% if not followerIdList.includes(twit.User.id) and twit.User.id !== user.id and user.id %}
+          <button class="twit-follow btn">팔로우</button>
+          {% elif twit.User.id !== user.id and user.id%}
+          <button class="twit-unfollow btn">팔로우끊기</button>
+          {% endif %}
+          <div class="twit-img">
+            <a href="/clubdetail"><img src="{{twit.img}}" alt="섬네일" /></a>
+          </div>
+          <!-- <button class="like"><i class="sprite_heart_icon_outline"></i></button> -->
+
+          <!-- <div class="twit-content"></div> -->
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{%include "footer.html"%}
+{% endblock %} {% block script %}
+<script src="/club/javascripts/clubFollow.js"></script>
+{% endblock %}

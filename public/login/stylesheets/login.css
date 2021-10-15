@@ -1,0 +1,76 @@
+:root {
+  --bg-color: white;
+  --search-width: 19vw;
+}
+
+.login-form {
+  text-align: center;
+  margin-top: 7vw;
+}
+
+/* 로고 전체 */
+.login-logo {
+  width: 3vw;
+  height: 3vw;
+  border-radius: 5px;
+  margin-right: 0.5em;
+}
+
+.one-input {
+  width: var(--search-width);
+  height: 2vw;
+  margin-bottom: 1.5vw;
+  border-color: transparent;
+  background-color: transparent;
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-color) inset !important;
+  -webkit-text-fill-color: #000 !important;
+  border-bottom: #000;
+  font-size: 1vw;
+}
+
+input:focus {
+  outline: none;
+}
+
+.login-btn {
+  width: var(--search-width);
+  height: 2.3vw;
+  margin-bottom: 1vw;
+  border-color: transparent;
+  background-color: #dadada;
+  font-size: 1vw;
+}
+
+.login-btn:hover {
+  background-color: #55b1a3;
+  cursor: pointer;
+}
+
+.login-img {
+  width: 10vw;
+  margin-bottom: 2vw;
+}
+
+.caption-text {
+  font-size: 0.9vw;
+  text-decoration-line: none;
+  color: #000;
+  margin: 0px auto;
+  padding-left: 3.5vw;
+}
+
+.caption-text:hover {
+  text-decoration-line: underline;
+}
+/* 
+.caption-box {
+  margin-bottom: 1vw;
+  font-size: 2vw;
+} */
+
+/* 추가해보 */
+#caption {
+  /* margin-left: 40vw; */
+  display: block;
+  margin: 0vw auto;
+}
